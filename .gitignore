@@ -21,3 +21,6 @@ build
 /stage
 /*.snap
 /snap/.snapcraft/
+
+# Helper files
+.xgrep

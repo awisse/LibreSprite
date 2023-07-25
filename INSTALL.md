@@ -105,6 +105,14 @@ To compile LibreSprite, run the following commands:
 To compile the legacy Allegro backend, run `cmake` with the flags
 `-DUSE_SDL2_BACKEND=off -DUSE_ALLEG4_BACKEND=on`.
 
+To compile on a Raspberry Pi or other computer with limited resources, set
+resource limiting ninja options in order to avoid locking the machine. See also
+`man ninja`.
+
+    -j N  # Run at most N jobs in parallel. Use 2 for 4 cores.
+    -l N  # Do not start new jobs if load average is greater than N.
+          # Use N=M+1 for M cores.
+
 The repository contains a patched version of the Allegro 4 library.
 If you want to use your installed version of Allegro, run `cmake` with
 the flag `-DUSE_SHARED_ALLEGRO4=ON`. However, this is not recommended due to
