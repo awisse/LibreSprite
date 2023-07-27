@@ -8,7 +8,7 @@
 
 #include "base/config.h"
 
-#ifdef HAVE_STDINT_H
+#ifdef LS_HAVE_STDINT_H
   #include <stdint.h>
 #else
   #error uint8_t, uint32_t, etc. definitions are missing

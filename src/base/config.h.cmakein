@@ -6,7 +6,7 @@
 
 #pragma once
 
-#cmakedefine HAVE_STDINT_H
+#cmakedefine LS_HAVE_STDINT_H
 #cmakedefine HAVE_SCHED_YIELD
 #cmakedefine HAVE_DLFCN_H
 

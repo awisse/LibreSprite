@@ -5,7 +5,7 @@ include(CheckIncludeFiles)
 include(CheckFunctionExists)
 include(TestBigEndian)
 
-check_include_files(stdint.h HAVE_STDINT_H)
+check_include_files(stdint.h LS_HAVE_STDINT_H)
 check_include_files(dlfcn.h HAVE_DLFCN_H)
 check_function_exists(sched_yield HAVE_SCHED_YIELD)
 
