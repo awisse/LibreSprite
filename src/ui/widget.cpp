@@ -1305,9 +1305,7 @@ bool Widget::onProcessMessage(Message* msg)
 {
   ASSERT(msg != NULL);
 
-  MessageType msgtype = msg->type();
-
-  switch (msgtype) {
+  switch (msg->type()) {
 
     case kOpenMessage:
     case kCloseMessage:
@@ -1345,17 +1343,15 @@ bool Widget::onProcessMessage(Message* msg)
 
     case kDoubleClickMessage:
       // Convert double clicks into mouse down
-      if (msgtype == kMouseDownMessage) {
-        MouseMessage* mouseMsg = static_cast<MouseMessage*>(msg);
-        MouseMessage mouseMsg2(kMouseDownMessage,
-                               mouseMsg->pointerType(),
-                               mouseMsg->buttons(),
-                               mouseMsg->modifiers(),
-                               mouseMsg->position(),
-                               mouseMsg->wheelDelta());
+      MouseMessage* mouseMsg = static_cast<MouseMessage*>(msg);
+      MouseMessage mouseMsg2(kMouseDownMessage,
+                             mouseMsg->pointerType(),
+                             mouseMsg->buttons(),
+                             mouseMsg->modifiers(),
+                             mouseMsg->position(),
+                             mouseMsg->wheelDelta());
 
-        sendMessage(&mouseMsg2);
-      }
+      sendMessage(&mouseMsg2);
       break;
 
     case kMouseDownMessage:
