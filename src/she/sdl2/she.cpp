@@ -269,7 +269,11 @@ namespace sdl {
                     }
 
                     default:
-                        std::cout << "Unknown windowevent: " << (int) sdlEvent.window.event << std::endl;
+                        // These events are not unknown, just not handled. 
+                        // When moving the window, stdout gets polluted by 
+                        // dozens of "Unknown windowevent: 4" rows, drowning 
+                        // out other messages.
+                        // std::cout << "Unknown windowevent: " << (int) sdlEvent.window.event << std::endl;
                         continue;
                     }
                     continue;

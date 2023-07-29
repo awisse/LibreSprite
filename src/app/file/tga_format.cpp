@@ -7,7 +7,6 @@
 //
 // tga.c - Based on the code of Tim Gunn, Michal Mertl, Salvador
 //         Eduardo Tropea and Peter Wang.
-
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
@@ -18,6 +17,11 @@
 #include "base/cfile.h"
 #include "base/file_handle.h"
 #include "doc/doc.h"
+
+// In this file, there are many C library function calls that don't use the
+// returned value. Might just as well turn off the compiler warnings in this
+// file.
+#pragma GCC diagnostic ignored "-Wunused-result"
 
 namespace app {
 
